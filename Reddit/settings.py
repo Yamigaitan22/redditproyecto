@@ -52,7 +52,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Reddit.urls'
+ROOT_URLCONF = 'reddit.urls'
 
 TEMPLATES = [
     {
@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Reddit.wsgi.application'
+WSGI_APPLICATION = 'reddit.wsgi.application'
 
 
 # Database
