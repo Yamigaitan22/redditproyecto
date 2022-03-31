@@ -1,6 +1,3 @@
-from distutils.command.upload import upload
-import email
-from tabnanny import verbose
 from django.db import models
 
 class Noticias (models.Model):
