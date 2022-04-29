@@ -19,4 +19,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Reddit_app.urls')),
+    path('digits/', include('digits.urls')),
+    
 ]

@@ -40,13 +40,13 @@
 <nav class="mmm">
     <div class="mmm-content">
         <ul class="mmm-list">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about-us.html">Beneficios</a></li>
-            <li><a href="services.html">Unidad</a></li>
+            <li><a href="{% url 'Inicio' %}">Home</a></li>
+            <li><a href="{% url 'Sobre Nosotros' %}">Beneficios</a></li>
+            <li><a href="{% url 'Servicios' %}">Unidad</a></li>
            
-            <li><a href="tabs-and-accordions.html">Reacciones</a></li>
-            <li><a href="news.html">Noticias</a></li>
-            <li><a href="contact-us.html">Contacto</a></li>
+            <li><a href="{% url 'Pestañas y Acordes' %}">Reacciones</a></li>
+            <li><a href="{% url 'Noticias' %}" >Noticias</a></li>
+            <li><a href="{% url 'Contactanos' %}">Contacto</a></li>
             
         </ul>
     </div>
@@ -96,22 +96,22 @@
                         <!-- Begin social links -->
                         <ul class="social-links">
                             <li>
-                                <a href="#!" title="Facebook">
+                                <a href="https://www.facebook.com/" title="Facebook">
                                     <svg viewBox="0 0 320 512"><use xlink:href="{% static 'assets/img/sprite.svg#facebook-icon' %}"></use></svg>
                                 </a>
                             </li>
                             <li>
-                                <a href="#!" title="Instagram">
+                                <a href="https://www.instagram.com/" title="Instagram">
                                     <svg viewBox="0 0 448 512"><use xlink:href="{% static 'assets/img/sprite.svg#instagram-icon' %}"></use></svg>
                                 </a>
                             </li>
                             <li>
-                                <a href="#!" title="LinkedIn">
+                                <a href="https://www.linkedin.com/login/es" title="LinkedIn">
                                     <svg viewBox="0 0 448 512"><use xlink:href="{% static 'assets/img/sprite.svg#linkedin-icon' %}"></use></svg>
                                 </a>
                             </li>
                             <li>
-                                <a href="#!" title="Twitter">
+                                <a href="https://twitter.com/iniciarsesion?lang=es" title="Twitter">
                                     <svg viewBox="0 0 512 512"><use xlink:href="{% static 'assets/img/sprite.svg#twitter-icon' %}"></use></svg>
                                 </a>
                             </li>
@@ -135,8 +135,8 @@
                 </div>
                 <div class="col-auto header-fixed-col">
                     <!-- Begin logo -->
-                    <a href="/" class="logo" title="PathSoft">
-                        <img src="{% static 'assets/img/LogoMakr.PNG' %}" width="150" height="200" alt="PathSoft">
+                    <a href="/" class="logo" title="reddit">
+                        <img src="{% static 'assets/img/LogoMakr.png' %}" width="150" height="200" alt="PathSoft">
                     </a><!-- End logo -->
                 </div>
                 <div class="col-auto header-fixed-col d-none d-lg-block col-static">
@@ -150,7 +150,13 @@
         <li><a href="{% url 'Pestañas y Acordes' %}" data-title="Reacciones"><span>Reacciones</span></a></li>
         <li><a href="{% url 'Noticias' %}" data-title="News"><span>Noticias</span></a></li>
         <li><a href="{% url 'Contactanos' %}" data-title="Contact Us"><span>Contactos</span></a></li>
-        <li><a href="/admin/"> Admin</a></li>
+        <li><a href="/digits/">Digits</a></li>
+        <li><a href="{% url 'registro' %}" data-title="register"><span>Registro</span></a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'logout' %}" data-title="Logout"><span>Logout</span></a></li>
+        {% else %}
+        <li><a href="{% url 'login' %}" data-title="Login"><span>Login</span></a></li>
+        {% endif %}
     </ul>
 </nav><!-- End main menu -->
                 </div>
@@ -162,41 +168,41 @@
                         <li class="d-block d-lg-none">
                             <div class="header-navbar">
                                 <div class="header-navbar-btn">
-                                    <i class="material-icons md-24">more_vert</i>
+                                    <i class="material-icons md-24">Y</i>
                                 </div>
                                 <ul class="header-navbar-content">
                                     <li>
                                         <a href="mailto:mail@example.com">
-                                            <i class="material-icons md-20">mail_outline</i>
-                                            <span>mail@example.com</span>
+                                            <i class="material-icons md-20"></i>
+                                            <span>Yazmin00C@gmail.com</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="mailto:mail@example.com" class="formingHrefTel">
-                                            <i class="material-icons md-20">support_agent</i>
-                                            <span>1-888-777-1234</span>
+                                            <i class="material-icons md-20"></i>
+                                            <span>7861185953</span>
                                         </a>
                                     </li>
                                     <li>
                                         <!-- Begin social links -->
                                         <ul class="social-links">
                                             <li>
-                                                <a href="#!" title="Facebook">
+                                                <a href="https://es-la.facebook.com/" title="Facebook">
                                                     <svg viewBox="0 0 320 512"><use xlink:href="{% static 'assets/img/sprite.svg#facebook-icon' %}"></use></svg>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#!" title="Instagram">
+                                                <a href="https://www.instagram.com/" title="Instagram">
                                                     <svg viewBox="0 0 448 512"><use xlink:href="{% static 'assets/img/sprite.svg#instagram-icon' %}"></use></svg>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#!" title="LinkedIn">
+                                                <a href="https://www.linkedin.com/login/es" title="LinkedIn">
                                                     <svg viewBox="0 0 448 512"><use xlink:href="{% static 'assets/img/sprite.svg#linkedin-icon' %}"></use></svg>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#!" title="Twitter">
+                                                <a href="https://twitter.com/iniciarsesion?lang=es" title="Twitter">
                                                     <svg viewBox="0 0 512 512"><use xlink:href="{% static 'assets/img/sprite.svg#twitter-icon' %}"></use></svg>
                                                 </a>
                                             </li>
@@ -233,7 +239,7 @@
                     <div class="footer-company-info">
                         <div class="footer-company-top">
                             <a href="/" class="logo" title="PathSoft">
-                                <img data-src="{% static 'assets/img/LogoMakr.PNG' %}" width="150" height="200" class="lazy" src="{% static 'data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=' %}" alt="PathSoft">
+                                <img data-src="{% static 'assets/img/LogoMakr.png' %}" width="150" height="200" class="lazy" src="{% static 'data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=' %}" alt="PathSoft">
                             </a>
                             <div class="footer-company-desc">
                                 <p>Nuestra empresa ha estado desarrollando software de alta calidad y confiable

@@ -1,0 +1,88 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block contenido %}
+
+<!-- Begin bread crumbs -->
+<nav class="bread-crumbs">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<ul class="bread-crumbs-list">
+					<li>
+						<a href="{% url 'Inicio' %}">Inicio</a>
+						<i class="material-icons md-18">chevron_right</i>
+					</li>
+					<li><a href="#!">Login</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</nav><!-- End bread crumbs -->
+
+<div class="section">
+	<div class="container">
+		<div class="row content-items">
+			<div class="col-xl-8 col-md-7 content-item">
+				<h2 class="heading uppercase btmspace-30 center">Login Usuario</h2>
+				<form method="POST">
+					{% csrf_token %}
+					{% if form.errors %}
+					<div class="alert alert-danger alert-dismissible" role="alert">
+						<div id="form_errors">
+							{% for key, value in form.errors.items %}
+							<strong>{{ value }}</strong>
+							{% endfor %}
+						</div>
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					{% endif %}
+					<div class="block">
+						<label for="username">Username</label>
+						{{ form.username }}
+					</div>
+					<div class="block ">
+						<label for="password">Password</label>
+						{{ form.password }}
+					</div>
+					<div class="block center">
+						<label for="remember_me">Remember me</label>
+						{{ form.remember_me }}
+					</div>
+
+					<div class="block center">
+						<p><input name="submit" type="submit" value="Log In"class="btn btn-w200 ripple"></p>
+						<p><input name="reset" type="reset" value="Reset Form"class="btn btn-w200 ripple"></p>
+					</div>
+					<div class="block center">
+						<p>¿No tienes una cuenta? Registrate <a href="{% url 'registro' %}"> Aquí </a></p>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+
+<a class="bff d-none d-md-block" href="https://cvapp.es/">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="bff-container">
+					<p>ESTAS BUSCANDO TU PROXIMO EMPLEO</p>
+					<div class="btn btn-border btn-small">
+						<span>Descarga Curriculo</span>
+						<svg class="btn-icon-right" viewBox="0 0 13 9" width="13" height="9">
+							<use xlink:href="assets/img/sprite.svg#arrow-right"></use>
+						</svg>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</a>
+
+{% endblock %}

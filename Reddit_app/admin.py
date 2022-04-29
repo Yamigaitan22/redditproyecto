@@ -10,6 +10,11 @@ class NotiAdmin(admin.ModelAdmin):
     list_filter=["fecha"]
     list_per_page=10
 
+class ComentariosAdmin(admin.ModelAdmin):
+    list_display = ["nombre","email","telefono","comentario"]
+    list_editable = ["comentario"]
+    search_fields = ["email"]
+    list_per_page = 10 
 
 
 
